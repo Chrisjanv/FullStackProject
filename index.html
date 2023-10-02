@@ -30,8 +30,7 @@
                                 Launch demo modal
                             </button> -->
             <!-- Modal -->
-            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -40,13 +39,58 @@
                         </div>
 
                         <div class="modal-body">
-                            <div id="login"></div>
-                            <div id="register"></div>
+
+                            <!-- Hide according to what is needed -->
+
+                            <div id="login">
+                                <h2>Register for Bro Clothing</h2>
+                                <form id="registrationForm" action="src/php/register.php" method="post">
+                                    <input type="text" name="name" placeholder="Name" required><br>
+                                    <input type="email" name="email" placeholder="Email" required><br>
+                                    <input type="password" name="password" placeholder="Password" required><br>
+                                    <input type="submit" value="Register" class="btn btn-primary">
+                                </form>
+                            </div>
+
+                            <div id="register">
+                                <h2>Login to Bro Clothing</h2>
+                                <form id="loginForm" action="src/php/login.php" method="post">
+                                    <input type="email" name="email" placeholder="Email" required><br>
+                                    <input type="password" name="password" placeholder="Password" required><br>
+                                    <input type="submit" value="Login" class="btn btn-primary">
+                                </form>
+                            </div>
+
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cart">
+            <i class="fa fa-shopping-cart fa-2x" type="button" data-bs-toggle="modal" data-bs-target="#cartModal"
+                aria-hidden="true"></i>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button> -->
+            <!-- Modal -->
+            <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cart</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -54,11 +98,12 @@
         </div>
 
 
+        <!-- Icons in header -->
 
-        <div class="userSpace text-center">
+        <!-- <div class="userSpace text-center">
             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-        </div>
+        </div> -->
 
     </header>
 
