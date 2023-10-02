@@ -22,6 +22,39 @@
         <h3 class="display-6">Simplicity at it's finest</h3>
 
         <!-- Login and cart -->
+        <!-- Button trigger modal -->
+        <div id="userProfile">
+            <i class="fa fa-user fa-2x" type="button" data-bs-toggle="modal" data-bs-target="#userModal"
+                aria-hidden="true"></i>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Launch demo modal
+                            </button> -->
+            <!-- Modal -->
+            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Profile</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div id="login"></div>
+                            <div id="register"></div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="userSpace text-center">
             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
