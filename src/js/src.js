@@ -34,3 +34,26 @@ document.addEventListener("DOMContentLoaded", function () {
     showHome();
 });
 
+
+
+// Contact Form 
+document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contactForm");
+    const feedbackDiv = document.getElementById("feedback");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        fetch("contact.php", {
+            method: "POST",
+            body: new FormData(contactForm),
+        })
+        .then(response => response.text())
+        .then(data => {
+            feedbackDiv.innerHTML = data;
+        })
+        .catch(error => {
+            feedbackDiv.innerHTML = "An error occurred while processing your request.";
+        });
+    });
+});
