@@ -9,3 +9,7 @@
 .footer{
     margin: 1rem;
 }
+
+#home, #about, #gallery, #shop, #contact{
+    margin: 1rem;
+}

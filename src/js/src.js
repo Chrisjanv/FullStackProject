@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        fetch("../php/contact.php", {
+        fetch("src/php/contact.php", {
             method: "POST",
             body: new FormData(contactForm),
         })
@@ -57,3 +57,24 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
+
+// Gallery
+
+// Make an AJAX request to get image paths from the server
+fetch('src/php/get_images.php')
+    .then(response => response.json())
+    .then(data => {
+        // Extract image paths from the response
+        const imagePaths = data.imagePaths;
+
+        // Display images in the gallery section
+        const gallery = document.getElementById('gallery');
+        imagePaths.forEach(path => {
+            const image = document.createElement('img');
+            image.src = path;
+            gallery.appendChild(image);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
