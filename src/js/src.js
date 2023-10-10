@@ -37,23 +37,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Contact Form 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
     const feedbackDiv = document.getElementById("feedback");
 
-    contactForm.addEventListener("submit", function(event) {
+    contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        fetch("contact.php", {
+        fetch("../php/contact.php", {
             method: "POST",
             body: new FormData(contactForm),
         })
-        .then(response => response.text())
-        .then(data => {
-            feedbackDiv.innerHTML = data;
-        })
-        .catch(error => {
-            feedbackDiv.innerHTML = "An error occurred while processing your request.";
-        });
+            .then(response => response.text())
+            .then(data => {
+                feedbackDiv.innerHTML = data;
+            })
+            .catch(error => {
+                feedbackDiv.innerHTML = "An error occurred while processing your request.";
+            });
     });
 });

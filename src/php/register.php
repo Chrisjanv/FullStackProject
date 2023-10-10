@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $db->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
         $stmt->execute([$name, $email, $password]);
 
-        echo "Registration successful!";
+        // echo "Registration successful!";
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

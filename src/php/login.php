@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 session_start();
                 $_SESSION['user_email'] = $user['email']; // Assuming email is a unique identifier
                 $_SESSION['user_name'] = $user['name'];
-                echo "Login successful!";
+                // echo "Login successful!";
             } else {
                 echo "Incorrect password!";
             }
