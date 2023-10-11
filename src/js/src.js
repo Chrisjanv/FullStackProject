@@ -78,3 +78,45 @@ fetch('src/php/get_images.php')
     .catch(error => {
         console.error('Error:', error);
     });
+
+
+// Shop
+
+// Function to fetch and display products in the "shop" div
+function fetchAndDisplayProducts() {
+    // Send an AJAX request to your PHP script
+    fetch('src/php/get_products.php')
+        .then(response => response.json())
+        .then(data => {
+            const shopDiv = document.getElementById('shop');
+
+            // Loop through the products and create HTML elements to display them
+            data.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.innerHTML = `
+                            <h2>${product.name}</h2>
+                            <p>Size: ${product.size}</p>
+                            <p>Price: $${product.price}</p>
+                            <img src="${product.pictures}" alt="${product.name}">
+                        `;
+
+                shopDiv.appendChild(productDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+        });
+}
+// Add a click event listener to the "Shop" link
+document.getElementById('shop-link').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default behavior of the link
+
+    // Toggle the display of the shop section
+    const shopDiv = document.getElementById('shop');
+    if (shopDiv.style.display === 'none') {
+        fetchAndDisplayProducts(); // Fetch and display products when the shop section is shown
+        shopDiv.style.display = 'block';
+    } else {
+        shopDiv.style.display = 'none';
+    }
+});

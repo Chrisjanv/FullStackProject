@@ -11,7 +11,6 @@ try {
     $imagePaths = array();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        // Assuming the 'pictures' column contains file paths
         $imagePaths[] = $row['pictures'];
     }
 
