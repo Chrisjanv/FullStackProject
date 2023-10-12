@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showHome();
 });
 
-
-
 // Contact Form 
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
@@ -79,7 +77,6 @@ fetch('src/php/get_images.php')
     .catch(error => {
         console.error('Error:', error);
     });
-
 
 // Function to fetch and display products
 let data = [];
