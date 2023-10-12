@@ -72,6 +72,7 @@ fetch('src/php/get_images.php')
         imagePaths.forEach(path => {
             const image = document.createElement('img');
             image.src = path;
+            image.classList.add('galleryImages'); // Add the class "galleryImages" to the image
             gallery.appendChild(image);
         });
     })
@@ -80,62 +81,8 @@ fetch('src/php/get_images.php')
     });
 
 
-// Shop
-
-// Function to fetch and display products in the "shop" div
-// // Function to fetch and display products
-// function fetchAndDisplayProducts() {
-//     // Send an AJAX request to your PHP script
-//     fetch('src/php/get_products.php')
-//         .then(response => response.json())
-//         .then(data => {
-//             const productRow = document.getElementById('product-row');
-
-//             // Clear any existing products
-//             productRow.innerHTML = '';
-
-//             // Loop through the products and create Bootstrap cards to display them
-//             data.forEach(product => {
-//                 const productCard = document.createElement('div');
-//                 productCard.className = 'col-lg-4 col-md-6 mb-4';
-
-//                 productCard.innerHTML = `
-//                             <div class="card">
-//                                 <img src="${product.pictures}" class="card-img-top" alt="${product.name}">
-//                                 <div class="card-body">
-//                                     <h5 class="card-title">${product.name}</h5>
-//                                     <p class="card-text">Size: ${product.size}</p>
-//                                     <p class="card-text">Price: R${product.price}</p>
-//                                     <button class="btn btn-primary buyButton">Buy</button>
-//                                 </div>
-//                             </div>
-//                         `;
-
-//                 productRow.appendChild(productCard);
-//             });
-//         })
-//         .catch(error => {
-//             console.error('Error fetching products:', error);
-//         });
-// }
-
-// // Add a click event listener to the "Shop" link
-// document.getElementById('shop-link').addEventListener('click', function (event) {
-//     event.preventDefault(); // Prevent the default behavior of the link
-
-//     // Toggle the display of the shop section and fetch products
-//     const shopDiv = document.getElementById('shop');
-//     if (shopDiv.style.display === 'none') {
-//         fetchAndDisplayProducts();
-//         shopDiv.style.display = 'block';
-//     } else {
-//         shopDiv.style.display = 'none';
-//     }
-// });
-
-let data = [];
-
 // Function to fetch and display products
+let data = [];
 function fetchAndDisplayProducts() {
     // Send an AJAX request to your PHP script
     fetch('src/php/get_products.php')

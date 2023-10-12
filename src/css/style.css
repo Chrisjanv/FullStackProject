@@ -13,3 +13,12 @@
 #home, #about, #gallery, #shop, #contact{
     margin: 1rem;
 }
+
+.galleryImages{
+margin: 1rem;
+}
+
+#about{
+    margin: 6rem;
+    width: 100vw;
+}
