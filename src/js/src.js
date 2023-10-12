@@ -96,7 +96,7 @@ function fetchAndDisplayProducts() {
             // Loop through the products and create Bootstrap cards to display them
             data.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.className = 'col-lg-4 col-md-6 mb-4';
+                productCard.className = 'col-lg-3 ';
 
                 productCard.innerHTML = `
                     <div class="card">

@@ -22,3 +22,7 @@ margin: 1rem;
     margin: 6rem;
     width: 100vw;
 }
+
+#gallery, #galleryRow{
+    width: 100vw;
+}
